@@ -1091,11 +1091,8 @@ var data = [
 			document.getElementsByName("effect" + i + "Encroach")[0].value   = value["侵蝕値"];
 			document.getElementsByName("effect" + i + "Restrict")[0].value  = value["制限"];
 			document.getElementsByName("effect" + i + "Note")[0].value  = decodeURIComponent(escape(window.atob(value["簡略効果"])));
-			if (value["種別"] == "イージー") {
-			  document.getElementsByName("effect" + i + "Type")[0].value = value["種別"];
-			}
-			else if (value["種別"] == "エネミー") {
-			  document.getElementsByName("effect" + i + "Type")[0].value = value["種別"];
+			for(var j = 0; j < options.length; j++){
+				if (options[j].label == value["種別"]) options[j].selected = true;
 			}
 		  }
 		}
