@@ -1066,7 +1066,7 @@ var data = [
 		  document.getElementById(arts[i].id + SEP + "range").value  = value["射程"];
 		  document.getElementById(arts[i].id + SEP + "cost").value   = value["侵蝕値"];
 		  document.getElementById(arts[i].id + SEP + "limit").value  = value["制限"];
-		  document.getElementById(arts[i].id + SEP + "notes").value  = Buffer.from(value["簡略効果"], 'base64').toString();
+		  document.getElementById(arts[i].id + SEP + "notes").value  = decodeURIComponent(escape(window.atob(value["簡略効果"])));
 		  if (value["種別"] == "イージー") {
 			document.getElementById(arts[i].id + SEP + "check").value = 3;
 		  }
@@ -1090,7 +1090,7 @@ var data = [
 			document.getElementsByName("effect" + i + "Range")[0].value  = value["射程"];
 			document.getElementsByName("effect" + i + "Encroach")[0].value   = value["侵蝕値"];
 			document.getElementsByName("effect" + i + "Restrict")[0].value  = value["制限"];
-			document.getElementsByName("effect" + i + "Note")[0].value  = Buffer.from(value["簡略効果"], 'base64').toString();
+			document.getElementsByName("effect" + i + "Note")[0].value  = decodeURIComponent(escape(window.atob(value["簡略効果"])));
 			if (value["種別"] == "イージー") {
 			  document.getElementsByName("effect" + i + "Type")[0].value = value["種別"];
 			}
