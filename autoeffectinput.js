@@ -1058,6 +1058,7 @@ function autoeffectinput() {
   for (var i = 0, l = arts.length; i < l; i++) {
     data.forEach (
       function(value) {
+        console.log(value["エフェクト名"]);
         if (document.getElementById(arts[i].id + SEP + "name").value == value["エフェクト名"]) {
           document.getElementById(arts[i].id + SEP + "type").value   = value["技能"];
           document.getElementById(arts[i].id + SEP + "timing").value = value["タイミング"];
@@ -1068,10 +1069,10 @@ function autoeffectinput() {
           document.getElementById(arts[i].id + SEP + "limit").value  = value["制限"];
           document.getElementById(arts[i].id + SEP + "notes").value  = decodeURIComponent(escape(window.atob(value["簡略効果"])));
           if (value["種別"] == "イージー") {
-          document.getElementById(arts[i].id + SEP + "check").value = 3;
+            document.getElementById(arts[i].id + SEP + "check").value = 3;
           }
           else if (value["種別"] == "エネミー") {
-          document.getElementById(arts[i].id + SEP + "check").value = 5;
+            document.getElementById(arts[i].id + SEP + "check").value = 5;
           }
         }
       }
@@ -1082,7 +1083,8 @@ function autoeffectinput() {
     if(document.getElementsByName("effect" + i + "Name")){
       data.forEach (
         function(value) {
-            if (document.getElementsByName("effect" + i + "Name")[0].value == value["エフェクト名"]) {
+          console.log(value["エフェクト名"]);
+          if (document.getElementsByName("effect" + i + "Name")[0].value == value["エフェクト名"]) {
             document.getElementsByName("effect" + i + "Skill")[0].value   = value["技能"];
             document.getElementsByName("effect" + i + "Timing")[0].value = value["タイミング"];
             document.getElementsByName("effect" + i + "Dfclty")[0].value  = value["難易度"];
