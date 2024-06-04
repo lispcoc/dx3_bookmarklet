@@ -1078,15 +1078,15 @@ function autoeffectinput() {
   for (var i = 0, l = arts.length; i < l; i++) {
     data.forEach (
       function(value) {
-        console.log(value["エフェクト名"]);
-        if (document.getElementById(arts[i].id + SEP + "name").value == value["エフェクト名"]) {
-          document.getElementById(arts[i].id + SEP + "type").value   = value["技能"];
-          document.getElementById(arts[i].id + SEP + "timing").value = value["タイミング"];
-          document.getElementById(arts[i].id + SEP + "judge").value  = value["難易度"];
-          document.getElementById(arts[i].id + SEP + "target").value = value["対象"];
+        console.log(value["name"]);
+        if (document.getElementById(arts[i].id + SEP + "name").value == value["name"]) {
+          document.getElementById(arts[i].id + SEP + "type").value   = value["skill"];
+          document.getElementById(arts[i].id + SEP + "timing").value = value["timing"];
+          document.getElementById(arts[i].id + SEP + "judge").value  = value["difficulty"];
+          document.getElementById(arts[i].id + SEP + "target").value = value["target"];
           document.getElementById(arts[i].id + SEP + "range").value  = value["range"];
-          document.getElementById(arts[i].id + SEP + "cost").value   = value["侵蝕値"];
-          document.getElementById(arts[i].id + SEP + "limit").value  = value["制限"];
+          document.getElementById(arts[i].id + SEP + "cost").value   = value["cost"];
+          document.getElementById(arts[i].id + SEP + "limit").value  = value["limit"];
           document.getElementById(arts[i].id + SEP + "notes").value  = decodeURIComponent(escape(window.atob(value["desctiption"])));
           if (value["種別"] == "イージー") {
             document.getElementById(arts[i].id + SEP + "check").value = 3;
@@ -1103,15 +1103,15 @@ function autoeffectinput() {
     if(document.getElementsByName("effect" + i + "Name")){
       data.forEach (
         function(value) {
-          console.log(value["エフェクト名"]);
-          if (document.getElementsByName("effect" + i + "Name")[0].value == value["エフェクト名"]) {
-            document.getElementsByName("effect" + i + "Skill")[0].value   = value["技能"];
-            document.getElementsByName("effect" + i + "Timing")[0].value = value["タイミング"];
-            document.getElementsByName("effect" + i + "Dfclty")[0].value  = value["難易度"];
-            document.getElementsByName("effect" + i + "Target")[0].value = value["対象"];
+          console.log(value["name"]);
+          if (document.getElementsByName("effect" + i + "Name")[0].value == value["name"]) {
+            document.getElementsByName("effect" + i + "Skill")[0].value   = value["skill"];
+            document.getElementsByName("effect" + i + "Timing")[0].value = value["timing"];
+            document.getElementsByName("effect" + i + "Dfclty")[0].value  = value["difficulty"];
+            document.getElementsByName("effect" + i + "Target")[0].value = value["target"];
             document.getElementsByName("effect" + i + "Range")[0].value  = value["range"];
-            document.getElementsByName("effect" + i + "Encroach")[0].value   = value["侵蝕値"];
-            document.getElementsByName("effect" + i + "Restrict")[0].value  = value["制限"];
+            document.getElementsByName("effect" + i + "Encroach")[0].value   = value["cost"];
+            document.getElementsByName("effect" + i + "Restrict")[0].value  = value["limit"];
             document.getElementsByName("effect" + i + "Note")[0].value  = decodeURIComponent(escape(window.atob(value["desctiption"])));
             var options = document.getElementsByName("effect" + i + "Type")[0].options;
             for(var j = 0; j < options.length; j++){
