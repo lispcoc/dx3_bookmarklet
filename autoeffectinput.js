@@ -1048,56 +1048,56 @@ var data = [
 	{"掲載":"HR","シンドローム":"レネゲイドビーイング","エフェクト名":"クローズウーンズ","種別":"通常","最大Lv":"3","タイミング":"メジャー","技能":"<RC>","侵蝕値":"1","難易度":"自動成功","対象":"単体","射程":"至近","制限":"RB","簡略効果":"44Os44ON44Ky44Kk44OJ44KS5rS75oCn5YyW44GV44Gb5YaN55Sf5Yqb44KS5ZCR5LiK44GV44Gb44KL44Ko44OV44Kn44Kv44OI44CC5a++6LGh44GuSFDjgpJbTFYrMV1E54K55Zue5b6p44GZ44KL44CC44Gf44Gg44GX44CB5a++6LGh44Gu5L616J2V546H44GvMueCueS4iuaYh+OBmeOCi+OAgumdnuOCquODvOODtOOCoeODvOODieOBruOCreODo+ODqeOCr+OCv+ODvOOBq+OBr+WKueaenOOBjOOBquOBhOOAguOBk+OBruOCqOODleOCp+OCr+ODiOOBrzHjgrfjg7zjg7Pjgasx5Zue44G+44Gn5L2/55So44Gn44GN44KL44CC"},
 	{"掲載":"HR","シンドローム":"レネゲイドビーイング","エフェクト名":"ドミニオンレルム","種別":"通常","最大Lv":"3","タイミング":"オート","技能":"―","侵蝕値":"3","難易度":"自動成功","対象":"単体","射程":"視界","制限":"RB","簡略効果":"56m66ZaT44KE5bu654mp5YWo5L2T44Gr6Ieq44KJ44Gu44Os44ON44Ky44Kk44OJ44KS5rW46YCP44GV44Gb44CB6Ieq5YiG44Gu6IKJ5L2T44Gu44KI44GG44Gr5pON44KL44Ko44OV44Kn44Kv44OI44CC5a++6LGh44GM5Yik5a6a44KS6KGM44Gq44GG55u05YmN44Gr5L2/55So44GZ44KL44CC44Gd44Gu5Yik5a6a44Gu6YGU5oiQ5YCk44GrK1tMViozXeOBmeOCi+OAguOBk+OBruOCqOODleOCp+OCr+ODiOOBrzHjgrfjg4rjg6rjgqrjgasx5Zue44G+44Gn5L2/55So44Gn44GN44KL44CC"},
 	{"掲載":"HR","シンドローム":"レネゲイドビーイング","エフェクト名":"ファーコンタクト","種別":"通常","最大Lv":"1","タイミング":"オート","技能":"―","侵蝕値":"1","難易度":"自動成功","対象":"自身","射程":"至近","制限":"RB","簡略効果":"6YGg44GP44Gu44Os44ON44Ky44Kk44OJ44KS5pON44Gj44Gm6Ieq5YiG44Gu5YiG6Lqr44KS55Sf44G/5Ye644GX44Gf44KK44CB5bm75b2x44KS5oqV5bCE44GX44Gm44K344O844Oz44Gr55m75aC044GZ44KL44Ko44OV44Kn44Kv44OI44CC44K344O844Oz44Gr55m75aC044GZ44KL44CC44GC44Gq44Gf44Gu5Luj44KP44KK44Gr44CB44GC44Gq44Gf44Gu5YiG6Lqr44KS55m75aC044GV44Gb44KL44CC44GT44Gu5YiG6Lqr44Gv44Ko44Kt44K544OI44Op44Gn44GC44KK44CB5oim6ZeY44Gr5Y+C5Yqg44GZ44KL44GT44Go44Gv44Gn44GN44Ga5pS75pKD44KS5Y+X44GR44Gf5aC05ZCI44CB5Luj44KP44KK44Gr44K344O844Oz44GL44KJ6YCA5aC044GZ44KL44CC"}
-  ];
+];
   
+function autoeffectinput() {
   var arts = [];
   if(document.getElementById("arts")){
-	arts = document.getElementById("arts").tBodies[0].rows;
+    arts = document.getElementById("arts").tBodies[0].rows;
   }
-  
   for (var i = 0, l = arts.length; i < l; i++) {
-	data.forEach (
-	  function(value) {
-		if (document.getElementById(arts[i].id + SEP + "name").value == value["エフェクト名"]) {
-		  document.getElementById(arts[i].id + SEP + "type").value   = value["技能"];
-		  document.getElementById(arts[i].id + SEP + "timing").value = value["タイミング"];
-		  document.getElementById(arts[i].id + SEP + "judge").value  = value["難易度"];
-		  document.getElementById(arts[i].id + SEP + "target").value = value["対象"];
-		  document.getElementById(arts[i].id + SEP + "range").value  = value["射程"];
-		  document.getElementById(arts[i].id + SEP + "cost").value   = value["侵蝕値"];
-		  document.getElementById(arts[i].id + SEP + "limit").value  = value["制限"];
-		  document.getElementById(arts[i].id + SEP + "notes").value  = decodeURIComponent(escape(window.atob(value["簡略効果"])));
-		  if (value["種別"] == "イージー") {
-			document.getElementById(arts[i].id + SEP + "check").value = 3;
-		  }
-		  else if (value["種別"] == "エネミー") {
-			document.getElementById(arts[i].id + SEP + "check").value = 5;
-		  }
-		}
-	  }
-	)
+    data.forEach (
+      function(value) {
+        if (document.getElementById(arts[i].id + SEP + "name").value == value["エフェクト名"]) {
+          document.getElementById(arts[i].id + SEP + "type").value   = value["技能"];
+          document.getElementById(arts[i].id + SEP + "timing").value = value["タイミング"];
+          document.getElementById(arts[i].id + SEP + "judge").value  = value["難易度"];
+          document.getElementById(arts[i].id + SEP + "target").value = value["対象"];
+          document.getElementById(arts[i].id + SEP + "range").value  = value["射程"];
+          document.getElementById(arts[i].id + SEP + "cost").value   = value["侵蝕値"];
+          document.getElementById(arts[i].id + SEP + "limit").value  = value["制限"];
+          document.getElementById(arts[i].id + SEP + "notes").value  = decodeURIComponent(escape(window.atob(value["簡略効果"])));
+          if (value["種別"] == "イージー") {
+          document.getElementById(arts[i].id + SEP + "check").value = 3;
+          }
+          else if (value["種別"] == "エネミー") {
+          document.getElementById(arts[i].id + SEP + "check").value = 5;
+          }
+        }
+      }
+    )
   }
   
   for (var i = 1; document.getElementById("effect" + i); i++) {
-	if(document.getElementsByName("effect" + i + "Name")){
-	  data.forEach (
-		function(value) {
-		  if (document.getElementsByName("effect" + i + "Name")[0].value == value["エフェクト名"]) {
-			document.getElementsByName("effect" + i + "Skill")[0].value   = value["技能"];
-			document.getElementsByName("effect" + i + "Timing")[0].value = value["タイミング"];
-			document.getElementsByName("effect" + i + "Dfclty")[0].value  = value["難易度"];
-			document.getElementsByName("effect" + i + "Target")[0].value = value["対象"];
-			document.getElementsByName("effect" + i + "Range")[0].value  = value["射程"];
-			document.getElementsByName("effect" + i + "Encroach")[0].value   = value["侵蝕値"];
-			document.getElementsByName("effect" + i + "Restrict")[0].value  = value["制限"];
-			document.getElementsByName("effect" + i + "Note")[0].value  = decodeURIComponent(escape(window.atob(value["簡略効果"])));
-			var options = document.getElementsByName("effect" + i + "Type")[0].options;
-			for(var j = 0; j < options.length; j++){
-				if (options[j].label == value["種別"]) options[j].selected = true;
-			}
-		  }
-		}
-	  )
-	}
+    if(document.getElementsByName("effect" + i + "Name")){
+      data.forEach (
+        function(value) {
+            if (document.getElementsByName("effect" + i + "Name")[0].value == value["エフェクト名"]) {
+            document.getElementsByName("effect" + i + "Skill")[0].value   = value["技能"];
+            document.getElementsByName("effect" + i + "Timing")[0].value = value["タイミング"];
+            document.getElementsByName("effect" + i + "Dfclty")[0].value  = value["難易度"];
+            document.getElementsByName("effect" + i + "Target")[0].value = value["対象"];
+            document.getElementsByName("effect" + i + "Range")[0].value  = value["射程"];
+            document.getElementsByName("effect" + i + "Encroach")[0].value   = value["侵蝕値"];
+            document.getElementsByName("effect" + i + "Restrict")[0].value  = value["制限"];
+            document.getElementsByName("effect" + i + "Note")[0].value  = decodeURIComponent(escape(window.atob(value["簡略効果"])));
+            var options = document.getElementsByName("effect" + i + "Type")[0].options;
+            for(var j = 0; j < options.length; j++){
+              if (options[j].label == value["種別"]) options[j].selected = true;
+            }
+          }
+        }
+      )
+    }
   }
-  
+}
