@@ -1079,7 +1079,7 @@ function autoeffectinput() {
     )
   }
   
-  for (var i = 1; document.getElementById("effect" + i); i++) {
+  for (var i = 1; document.getElementsByName("effect" + i + "Name"); i++) {
     if(document.getElementsByName("effect" + i + "Name")){
       data.forEach (
         function(value) {
